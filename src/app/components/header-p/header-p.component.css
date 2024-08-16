@@ -1,0 +1,77 @@
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  position: flex;
+  background-color: #00CED1;
+  width: 100%;
+  padding: 5px;
+  box-shadow: 15px -10px 20px black;
+  z-index: 2;
+}
+
+.logo {
+  padding-right: 10px;
+}
+
+.logo img {
+  padding: 2px;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+.menu nav a {
+  display: inline-block;
+}
+
+.menu nav a {
+  padding: 10px 10px;
+  color: white;
+  text-decoration: none;
+  padding-right: 10px;
+  font-size: 17px;
+  border-radius: 30px;
+  transition: 0.6s;
+}
+
+.menu nav a:hover {
+  background-color: #00B5B7;
+}
+
+/* Botão de Pesquisa */
+
+#divBusca {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  width: 300px;
+  height: 32px;
+}
+
+#txtBusca {
+  float: left;
+  background-color: transparent;
+  padding-left: 10px;
+  font-size: 15px;
+  border: none;
+  height: 32px;
+  width: 191px;
+}
+
+#btnBusca {
+  border: none;
+  float: right;
+  height: 32px;
+  border-radius: 0 20px 20px 0;
+  width: 80px;
+  font-weight: bold;
+  background: #00B5B7;
+}

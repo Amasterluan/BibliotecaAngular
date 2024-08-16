@@ -1,0 +1,57 @@
+footer {
+    display: flex;
+    background-color: #00CED1;
+    height: 300px;
+    width: 100%;
+  }
+  
+  form {
+    padding-left: 200px;
+    flex-grow: 40%;
+    color: white;
+    padding-top: 40px;
+    text-align: center;
+  }
+  
+  #nome {
+    margin-bottom: 5px;
+  }
+  
+  form .btn {
+    background-color: #098ba1;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    transition: all linear 160ms;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  form .btn:hover {
+    transform: scale(1.05);
+    background-color: #045664;
+  }
+  
+  #nome {
+    margin-top: 5px;
+  }
+  
+  #nome,
+  #email {
+    padding: 6px;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid;
+  }
+  
+  #email {
+    margin-bottom: -50px;
+  }
+  
+  #Devlop {
+    padding-top: 90px;
+    flex-grow: 60%;
+    color: white;
+    padding-left: 200px;
+  }

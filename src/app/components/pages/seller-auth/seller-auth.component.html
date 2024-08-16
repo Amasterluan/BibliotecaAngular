@@ -1,0 +1,49 @@
+<div class="seller-auth">
+    <div class="background">  
+      <div *ngIf="showLogin" class="sing-up">
+
+      <div class="page">
+            <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="formLogin">
+                <h1>Cadastro do Vendedor</h1>
+                <br>
+                <label>Nome Completo
+                    <br>
+                    <input type="text" ngModel name="name" placeholder="Digite seu nome" autofocus="true" />
+                  </label>
+                <label>E-mail
+                  <br>
+                  <input type="email" ngModel name="email" placeholder="Digite seu e-mail"/>
+                </label>
+                <label>Senha
+                  <br>
+                  <input type="password" ngModel name="password" placeholder="Digite sua senha"/>
+                </label>
+                <a (click)="openLogin()">Fazer Login como Vendedor</a>
+                <a routerLink="/">Voltar a pagina inicial</a>
+                <input type="submit" value="Cadastrar" class="btn" id="botao"/>
+            </form>
+          </div>
+        </div>
+        <div *ngIf="!showLogin" class="login">
+          <div class="page">
+            <form #sellerLogin="ngForm" (ngSubmit)="signUp(sellerLogin.value)" class="formLogin">
+                <h1>Login do Vendedor</h1>
+                <p class="error-p">{{authError}}</p>
+                <br>
+                <label>E-mail
+                  <br>
+                  <input type="email" ngModel name="email" placeholder="Digite seu e-mail"/>
+                </label>
+                <label>Senha
+                  <br>
+                  <input type="password" ngModel name="password" placeholder="Digite sua senha"/>
+                </label>
+                <a (click)="openSignUp()">Cadastrar como Vendedor</a>
+                <a routerLink="/">Voltar a pagina inicial</a>
+                <button class="btn" id="blogin">Login</button>
+                
+            </form>
+          </div>
+        </div>
+    </div>
+</div>

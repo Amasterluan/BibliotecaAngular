@@ -1,0 +1,22 @@
+{
+  "seller": [
+    {
+      "id": "1",
+      "name": "Luan",
+      "email": "amasterluan@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "products": [
+    {
+      "id": "730c",
+      "imagemLivro": "https://harpercollins.com.br/cdn/shop/products/9786555114355.jpg?v=1691738135",
+      "nomeLivro": "O Senhor dos Anéis",
+      "nomeAutor": "J.R.R. Tolkien",
+      "categoria": "Fantasia",
+      "descricaoLivro": "Uma das maiores obras de fantasia, acompanhando a jornada de Frodo e a Sociedade do Anel.",
+      "preco": "49.90",
+      "estoque": 120
+    }
+  ]
+}
