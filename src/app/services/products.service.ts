@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { product } from '../data-types';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,4 +20,20 @@ export class ProductsService {
   deleteProduct(id:number){
     return this.http.delete(`http://localhost:3000/products/${id}`)
   }
+
+  getProduct(id:string){
+    return this.http.get<product>(`http://localhost:3000/products/${id}`)
+  }
+  updateProduct(product:product) {
+    return this.http.put<product>(`http://localhost:3000/products/${product.id}`, product);
+  }
+
+  trendyProducts(){
+    return this.http.get<product[]>(`http://localhost:3000/products?_limit=10`);
+  }
+  searchProducts(query: string): Observable<product[]> {
+    const regexQuery = `/${query}/i`;
+    return this.http.get<product[]>(`http://localhost:3000/products?nomeLivro_like=${regexQuery}`);
+  }
+   
 }

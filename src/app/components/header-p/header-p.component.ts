@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { ProductsService } from '../../services/products.service';
+import { product } from '../../data-types';
 
 @Component({
   selector: 'app-header-p',
@@ -8,24 +10,71 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class HeaderPComponent implements OnInit {
   menuType: string = 'default';
+  sellerName: string = '';
+  searchResult: product[] | undefined;
+  userName: string = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private product: ProductsService) {}
 
   ngOnInit(): void {
     this.router.events.subscribe((val: any) => {
-      if (val instanceof NavigationEnd) {
-        const sellerStore = localStorage.getItem('seller');
-        if (sellerStore && val.url.includes('seller')) {
+      if (val.url) {
+        // Verifica se o usuário é um vendedor
+        if (localStorage.getItem('seller') && val.url.includes('seller')) {
           this.menuType = 'seller';
-        } else {
+          let sellerStore = localStorage.getItem('seller');
+          let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+          this.sellerName = sellerData?.name;
+        } 
+        // Verifica se o usuário é um cliente
+        else if (localStorage.getItem('user')) {
+          this.menuType = 'user';
+          let userStore = localStorage.getItem('user');
+          let userData = userStore && JSON.parse(userStore);
+          this.userName = userData?.name || ''; // Define o nome do usuário
+        } 
+        // Menu padrão
+        else {
           this.menuType = 'default';
         }
       }
     });
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem('seller');
     this.router.navigate(['/']);
+  }
+
+  userLogout(): void {
+    localStorage.removeItem('user');
+    this.router.navigate(['/']);
+  }
+
+  searchProducts(event: KeyboardEvent): void {
+    const input = event.target as HTMLInputElement;
+    const query = input.value.trim();
+
+    if (query.length > 2) {
+      this.product.searchProducts(query).subscribe((result) => {
+        this.searchResult = result.slice(0, 5);
+      });
+    } else {
+      this.searchResult = undefined;
+    }
+  }
+
+  hideSearch(): void {
+    this.searchResult = undefined;
+  }
+
+  redirectToDetails(id: number): void {
+    this.router.navigate([`/details/${id}`]);
+  }
+
+  submitSearch(query: string): void {
+    if (query.trim()) {
+      this.router.navigate([`/search/${query}`]);
+    }
   }
 }

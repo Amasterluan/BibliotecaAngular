@@ -23,7 +23,10 @@
                 <td>R$ {{item.preco}}</td>
                 <td>{{item.estoque}}</td>
                 <td>{{item.descricaoLivro}}</td>
-                <td><button (click)="deleteProduct(item.id)">Deletar</button></td>
+                <td><fa-icon (click)="deleteProduct(item.id)" [icon]="icon"></fa-icon>
+                    <a class="buttonEdit"routerLink="/seller-update-product/{{item.id}}"><fa-icon [icon]="EditIcon"></fa-icon></a>
+                </td>
+                
             </tr>
         </tbody>
     </table>

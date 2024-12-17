@@ -1,1 +1,35 @@
-<h1>Página principal</h1>
+<section id="fund1">
+    <div id="inform1">
+      <div id="tit1">
+        <h1>
+          Estante Mágica
+        </h1>
+        <p id="subtit1">Onde você desperta a sua imaginação!!</p>
+      </div>
+    </div>
+</section>
+
+<div class="product-list-wrapper">
+    <h2>Produtos Populares</h2>
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let item of trendyProducts">
+            <div class="product-item">
+                <a routerLink="details/{{item.id}}"><img src="{{item.imagemLivro}}" alt=""></a>
+                
+            
+                <div class="product-details">
+                    <h6 class="name-header">{{item.nomeLivro}}</h6>
+                    <h6 class="preco-product">Preço: {{item.preco}}</h6>
+                </div>
+
+                <div class="product-categoria">
+                    <a routerLink="details/{{item.id}}"><h6>{{item.categoria}}</h6></a>
+                </div>
+                <div class="product-footer">
+                    <a href="#">+ Detalhes</a>
+                    <a href="#">+ Carrinho</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+  
 }
 
 .page {
@@ -79,10 +80,10 @@
   color: #fff;
   font-size: 14px;
   font-weight: 600;
-  border: none;
+  border: none !important;
   transition: all linear 160ms;
   cursor: pointer;
-  margin: 0;
+  margin: 0 !important;
 
 }
 
@@ -90,9 +91,4 @@
   transform: scale(1.05);
   background-color: #0b8ca3;
 
-}
-
-#cadSpace{
-  margin-top: -20px;
-  margin-bottom: -15px;
 }

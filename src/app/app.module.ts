@@ -7,7 +7,6 @@ import { HeaderPComponent } from './components/header-p/header-p.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
-import { LoginComponent } from './components/pages/login/login.component';
 import { RegisterComponent } from './components/pages/register/register.component';
 import { SellerAuthComponent } from './components/pages/seller-auth/seller-auth.component';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +16,10 @@ import { AuthGuard } from './auth.guard';
 import { SellerService } from './services/seller.service';
 import { SellerAddProductComponent } from './components/pages/seller-add-product/seller-add-product.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SellerUpdateProductComponent } from './components/pages/seller-update-product/seller-update-product.component';
+import { SearchComponent } from './components/pages/search/search.component';
+import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
+import { UserAuthComponent } from './components/pages/user-auth/user-auth.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    LoginComponent,
     RegisterComponent,
     SellerAuthComponent,
     SellerHomeComponent,
-    SellerAddProductComponent
+    SellerAddProductComponent,
+    SellerUpdateProductComponent,
+    SearchComponent,
+    ProductDetailsComponent,
+    UserAuthComponent,
   ],
   imports: [
     BrowserModule,
