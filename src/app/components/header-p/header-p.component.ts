@@ -13,6 +13,7 @@ export class HeaderPComponent implements OnInit {
   sellerName: string = '';
   searchResult: product[] | undefined;
   userName: string = '';
+  cartItems=0;
 
   constructor(private router: Router, private product: ProductsService) {}
 
@@ -38,6 +39,13 @@ export class HeaderPComponent implements OnInit {
           this.menuType = 'default';
         }
       }
+    });
+    let cartData = localStorage.getItem('localCart');
+    if(cartData){
+      this.cartItems= JSON.parse(cartData).length;
+    }
+    this.product.cartData.subscribe((items)=>{
+      this.cartItems=items.length
     });
   }
 

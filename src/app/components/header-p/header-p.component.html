@@ -44,20 +44,20 @@
           <!-- Menu Padrão -->
           <ng-container *ngSwitchCase="'default'">
             <a routerLink="/"><b>Home</b></a>
-            <a href="#"><b>Livros</b></a>
+            <a routerLink=""><b>Livros</b></a>
             <a routerLink="/seller-auth"><b>Vendedores</b></a>
             <a routerLink="/user-auth"><b>Cliente</b></a>
-            <a href="#"><b>Carrinho</b></a>
+            <a routerLink=""><b>Carrinho({{cartItems}})</b></a>
           </ng-container>
 
           <!-- Menu para Usuário -->
           <ng-container *ngSwitchCase="'user'">
             <a routerLink="/"><b>Home</b></a>
-            <a href="#"><b>Livros</b></a>
+            <a routerLink=""><b>Livros</b></a>
             <a routerLink="/seller-auth"><b>Vendedores</b></a>
             <a routerLink="user-auth"><b>Perfil {{userName}}</b></a>
             <a (click)="userLogout()"><b>Sair</b></a>
-            <a href="#"><b>Carrinho</b></a>
+            <a routerLink=""><b>Carrinho({{cartItems}})</b></a>
           </ng-container>
 
           <!-- Menu para Vendedor -->

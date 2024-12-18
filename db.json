@@ -5,6 +5,11 @@
       "name": "Luan",
       "email": "amasterluan@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "3491",
+      "email": "amasterluan@gmail.com",
+      "password": "1234"
     }
   ],
   "products": [
@@ -161,5 +166,8 @@
       "email": "amaster@gmail.com",
       "senha": "123"
     }
+  ],
+  "cart":[
+    
   ]
 }

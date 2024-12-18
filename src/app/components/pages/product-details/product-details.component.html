@@ -15,8 +15,11 @@
             <input type="number" id="quantity" value="{{productQuantity}}" />
           </div>
           <div class="buttons">
-            <button class="add-to-cart">
+            <button *ngIf="!removeCart" class="add-to-cart" (click)="AddToCart()">
               <i class="fas fa-shopping-cart"></i> Adicionar ao carrinho
+            </button>
+            <button *ngIf="removeCart" class="add-to-cart" (click)="removeToCart(productData.id)">
+              <i class="fas fa-shopping-cart"></i> Remover do carrinho
             </button>
             <button class="add-to-wishlist">
               <i class="fas fa-heart"></i> Adicionar à lista de desejos

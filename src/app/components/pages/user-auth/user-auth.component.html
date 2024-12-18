@@ -1,6 +1,6 @@
 <div class="background">
   <div class="page">
-    <div class="user-Signup">
+    <div *ngIf="!showLogin" class="user-Signup">
       <form
         #userSignup="ngForm"
         (ngSubmit)="signup(userSignup.value)"
@@ -51,12 +51,14 @@
             name="senha"
           />
         </label>
-        <a href="login.html">Fazer Login</a>
+        <a (click)="openLogin()">Fazer Login</a>
         <a href="/">Voltar a pagina inicial</a>
         <input type="submit" value="Cadastrar" class="btn" id="botao" />
       </form>
     </div>
-    <div class="user-Login">
+    
+    
+    <div *ngIf="showLogin" class="user-Login">
       <form
         #userLogin="ngForm"
         (ngSubmit)="login(userLogin.value)"
@@ -64,6 +66,7 @@
       >
         <h1>Login</h1>
         <br />
+        <span class="Error">{{authError}}</span>
         <label
           >E-mail
           <br />
@@ -72,7 +75,9 @@
             placeholder="Digite seu e-mail"
             ngModel
             name="email"
-          />
+            #email="ngModel" required
+          /><br>
+          <span class="invalidInput" *ngIf="email.invalid && email.touched"> Digite um e-mail válido </span>    
         </label>
 
         <label
@@ -82,12 +87,16 @@
             type="password"
             placeholder="Digite sua senha"
             ngModel
+            minlength="6"
+            maxlength="30"
             name="senha"
+            #password="ngModel" required
           />
+          <span class="invalidInput" *ngIf="password.invalid && password.touched"> Digite uma senha válida</span>
         </label>
-        <a href="login.html">Fazer Login</a>
+        <a (click)="openSignup()">Cadastre-se</a>
         <a href="/">Voltar a pagina inicial</a>
-        <input type="submit" value="Login" class="btn" id="botao" />
+        <input [disabled]="userLogin.invalid" type="submit" value="Login" class="btn" id="botao" />
       </form>
     </div>
   </div>

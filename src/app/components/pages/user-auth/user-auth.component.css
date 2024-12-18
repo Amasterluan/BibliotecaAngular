@@ -1,6 +1,6 @@
 .background{
     background-image: url("https://live.staticflickr.com/65535/52871027306_0e3a52f231_o.jpg" );
-    height: 500px;
+    height: 40%;
     width: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -74,7 +74,17 @@
 .formLogin a:hover {
   color: #10bddb;
 }
+.Error{
+  margin-top: -10px;
+  color: red;
 
+}
+.invalidInput{
+  color: red;
+  font-weight: normal;
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
 .btn {
   background-color: #10bddb;
   color: #fff;
