@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background: #111;
+  background: #0a9efb;
   color: white;
   font-size: 24px;
   padding: 20px 0;
@@ -80,6 +80,7 @@ table tbody td {
 }
 
 .product img {
+  width: 150px;
   border-radius: 6px;
 }
 
@@ -137,7 +138,7 @@ aside .box {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   background: #eee;
-  color: #222;
+  color: #222222;
 }
 
 aside .box header,
@@ -175,11 +176,19 @@ aside .box footer {
   justify-content: space-between;
 }
 
+.cupomSpace{
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
 aside > button {
   border: none;
   padding: 15px 0;
   color: white;
-  background: #28a745;
+  background: #0a9efb;
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -187,5 +196,5 @@ aside > button {
 }
 
 aside > button:hover {
-  background: #3bc55b;
+  background: #004483;
 }

@@ -153,7 +153,73 @@
       "senha": "123456"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "7818",
+      "imagemLivro": "https://m.media-amazon.com/images/I/81eB+7+CkUL._AC_UY218_.jpg",
+      "nomeLivro": "To Kill a Mockingbird",
+      "nomeAutor": "Harper Lee",
+      "categoria": "Fiction",
+      "descricaoLivro": "A classic of modern American literature, dealing with serious issues like racial inequality.",
+      "preco": "39.90",
+      "estoque": 85,
+      "quantity": 1,
+      "userId": "47ac",
+      "productId": "2"
+    },
+    {
+      "id": "f21b",
+      "imagemLivro": "https://m.media-amazon.com/images/I/71FMCr5Z9rL._SL1360_.jpg",
+      "nomeLivro": "The Hobbit",
+      "nomeAutor": "J.R.R. Tolkien",
+      "categoria": "Fantasy",
+      "descricaoLivro": "A prelude to The Lord of the Rings, following the journey of Bilbo Baggins.",
+      "preco": "42.90",
+      "estoque": 170,
+      "quantity": 1,
+      "userId": "47ac",
+      "productId": "7"
+    },
+    {
+      "id": "910b",
+      "imagemLivro": "https://m.media-amazon.com/images/I/91SZSW8qSsL._AC_UY218_.jpg",
+      "nomeLivro": "The Great Gatsby",
+      "nomeAutor": "F. Scott Fitzgerald",
+      "categoria": "Classic",
+      "descricaoLivro": "A novel that captures the essence of the American dream and the excesses of the Jazz Age.",
+      "preco": "34.90",
+      "estoque": 200,
+      "quantity": 1,
+      "userId": "47ac",
+      "productId": "5"
+    },
+    {
+      "id": "48c3",
+      "imagemLivro": "https://m.media-amazon.com/images/I/81dQwQlmAXL._AC_UY218_.jpg",
+      "nomeLivro": "Pride and Prejudice",
+      "nomeAutor": "Jane Austen",
+      "categoria": "Romance",
+      "descricaoLivro": "A romantic novel of manners that also critiques the British class system.",
+      "preco": "29.90",
+      "estoque": 100,
+      "quantity": 1,
+      "userId": "47ac",
+      "productId": "4"
+    },
+    {
+      "id": "cc89",
+      "imagemLivro": "https://m.media-amazon.com/images/I/71FMCr5Z9rL._SL1360_.jpg",
+      "nomeLivro": "The Catcher in the Rye",
+      "nomeAutor": "J.D. Salinger",
+      "categoria": "Classic",
+      "descricaoLivro": "A novel that explores the complexities of adolescence through the eyes of Holden Caulfield.",
+      "preco": "37.90",
+      "estoque": 90,
+      "quantity": 1,
+      "userId": "47ac",
+      "productId": "9"
+    }
+  ],
   "orders": [
     {
       "id": "517f",
