@@ -33,6 +33,7 @@ export class HeaderPComponent implements OnInit {
           let userStore = localStorage.getItem('user');
           let userData = userStore && JSON.parse(userStore);
           this.userName = userData?.name || ''; // Define o nome do usuário
+          this.product.getCartList(userData.id);
         } 
         // Menu padrão
         else {
@@ -57,6 +58,7 @@ export class HeaderPComponent implements OnInit {
   userLogout(): void {
     localStorage.removeItem('user');
     this.router.navigate(['/']);
+    this.product.cartData.emit([]);
   }
 
   searchProducts(event: KeyboardEvent): void {

@@ -4,8 +4,8 @@
       <!-- Logo -->
       <div class="logo">
         <a routerLink="/">
-          <img 
-            src="https://live.staticflickr.com/65535/52873737719_62afdb8bf0_o.png" 
+          <img
+            src="https://live.staticflickr.com/65535/52873737719_62afdb8bf0_o.png"
             alt="Logo"
           />
         </a>
@@ -21,10 +21,7 @@
           (keyup)="searchProducts($event)"
           (blur)="hideSearch()"
         />
-        <button 
-          id="btnBusca" 
-          (click)="submitSearch(searchInput.value)"
-        >
+        <button id="btnBusca" (click)="submitSearch(searchInput.value)">
           Buscar
         </button>
 
@@ -44,20 +41,21 @@
           <!-- Menu Padrão -->
           <ng-container *ngSwitchCase="'default'">
             <a routerLink="/"><b>Home</b></a>
-            <a routerLink=""><b>Livros</b></a>
             <a routerLink="/seller-auth"><b>Vendedores</b></a>
             <a routerLink="/user-auth"><b>Cliente</b></a>
-            <a routerLink=""><b>Carrinho({{cartItems}})</b></a>
+            <a href="#"
+              ><b>Carrinho({{ cartItems }})</b></a
+            >
           </ng-container>
 
           <!-- Menu para Usuário -->
           <ng-container *ngSwitchCase="'user'">
             <a routerLink="/"><b>Home</b></a>
-            <a routerLink=""><b>Livros</b></a>
             <a routerLink="/seller-auth"><b>Vendedores</b></a>
-            <a routerLink="user-auth"><b>Perfil {{userName}}</b></a>
+            <a routerLink="my-orders"><b>Meus Pedidos</b></a>
             <a (click)="userLogout()"><b>Sair</b></a>
-            <a routerLink=""><b>Carrinho({{cartItems}})</b></a>
+            <a [routerLink]="cartItems>0?'cart':null">
+              <b>Carrinho({{ cartItems }})</b></a>
           </ng-container>
 
           <!-- Menu para Vendedor -->

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user.service';
-import { login, SingUp } from '../../../data-types';
+import { cart, login, product, SingUp } from '../../../data-types';
 import { ProductsService } from '../../../services/products.service';
 
 @Component({
@@ -29,7 +29,7 @@ export class UserAuthComponent implements OnInit{
       if(result){
         this.authError="Usuário não encontrado!"
       }else{
-
+        this.localCartToRemove();
       }
     })
   };
@@ -39,5 +39,37 @@ export class UserAuthComponent implements OnInit{
   openLogin(){
     this.showLogin=true;
   };
+
+  localCartToRemove(){
+    let data = localStorage.getItem('localCart');
+    let user = localStorage.getItem('user');
+    let userId = user && JSON.parse(user).id;
+    if(data){
+      let cartDataList:product[] = JSON.parse(data);
+      
+
+      cartDataList.forEach((product:product, index)=>{
+        let cartData: cart={
+          ...product, productId:product.id, userId,
+        };
+
+        delete cartData.id;
+this.product.getCartList(userId);
+        setTimeout(() => {
+          this.product.AddToCart(cartData).subscribe((result)=>{
+            if(result){
+              console.warn("Dados Salvos no Banco de Dados")
+            }
+          })
+        }, 500);
+        if(cartDataList.length === index+1){
+          localStorage.removeItem('localCart')
+        }
+      });
+    }
+    setTimeout(() => {
+      this.product.getCartList(userId);
+    }, 2000);
+  }
 
 }

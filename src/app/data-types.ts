@@ -17,8 +17,9 @@ export interface product {
     descricaoLivro: string;
     preco: number;
     estoque: number;
-    id:number
+    id:number;
     quantity:undefined | number;
+    productId:undefined|number;
   }
 
 export interface cart {
@@ -34,4 +35,26 @@ export interface cart {
     userId:number;
     productId:number;
   }
+
+  export interface priceSummary{
+    price:number;
+    discount:number;
+    delivery:number;
+    total:number;
+  }
+
+  export interface order {
+    email: string;
+    cpf: string; 
+    name: string;
+    address: string;
+    numberPhone: string;
+    city: string;
+    state: string;
+    CEP: string; 
+    totalPrice: number;
+    userId: number; 
+    id: number | undefined;
+  }
+  
   

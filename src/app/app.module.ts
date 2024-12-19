@@ -7,7 +7,6 @@ import { HeaderPComponent } from './components/header-p/header-p.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
-import { RegisterComponent } from './components/pages/register/register.component';
 import { SellerAuthComponent } from './components/pages/seller-auth/seller-auth.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -20,6 +19,9 @@ import { SellerUpdateProductComponent } from './components/pages/seller-update-p
 import { SearchComponent } from './components/pages/search/search.component';
 import { ProductDetailsComponent } from './components/pages/product-details/product-details.component';
 import { UserAuthComponent } from './components/pages/user-auth/user-auth.component';
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
+import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+import { MyOrdersComponent } from './components/pages/my-orders/my-orders.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,6 @@ import { UserAuthComponent } from './components/pages/user-auth/user-auth.compon
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    RegisterComponent,
     SellerAuthComponent,
     SellerHomeComponent,
     SellerAddProductComponent,
@@ -36,6 +37,9 @@ import { UserAuthComponent } from './components/pages/user-auth/user-auth.compon
     SearchComponent,
     ProductDetailsComponent,
     UserAuthComponent,
+    CartPageComponent,
+    CheckoutComponent,
+    MyOrdersComponent,
   ],
   imports: [
     BrowserModule,
